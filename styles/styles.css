@@ -8,6 +8,7 @@ table{
 }
 td {
   height: 50px;
+	text-align: center;
 }
 body{
 	background-color: #E8DAEF;

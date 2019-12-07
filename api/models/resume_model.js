@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const resumeSchema = mongoose.Schema({
     //_id: mongoose.Schema.Types.ObjectId,
-    schoolID: { type: String, required: true},
+    studentID: { type: String, required: true},
     firstname: { type: String, required: true},
     lastname: { type: String, required: true},
     major: { type: String, required: true},

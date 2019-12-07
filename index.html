@@ -6,33 +6,31 @@
 		<h1>Resume Generator</h1>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./styles/styles.css">
-        <script src="./scripts/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+        <script src="/scripts/script.js"></script>
     </head>
   <div class = "createArea">
 				<form id="resumeSelect" action=#>
 			  Resume ID/Student ID:<br>
-			  <input type="text" name="resumeID" id="resumeID" value="">
+			  <input type="text" name="resumeID" id="resumeID" value="" required>
 			  <br>
-				<p><button id="btn" onclick="displayResume()">Display Resume</button><br></p>
-				<p><button id="btn" onclick="updateResume()">Update Resume</button><br></p>
-				<p><button id="btn" onclick="deleteResume()">Delete Resume</button><br></p>
+				<p><button id="displayBtn" onclick="displayResume()">Display Resume</button><br></p>
 				</form>
 				<form id="resumeCreate" action=#>
 				School ID:<br>
-			  <input type="text" name="studentID" id="studentID" value="">
+			  <input type="text" name="studentID" id="studentID" value="" required>
 			  <br>
 			  First name:<br>
-			  <input type="text" name="firstname" id="firstname" value="">
+			  <input type="text" name="firstname" id="firstname" value="" required>
 			  <br>
 			  Last name:<br>
-			  <input type="text" name="lastname" id="lastname" value="">
+			  <input type="text" name="lastname" id="lastname" value="" required>
 			  <br>
 			  Major:<br>
-			  <input type="text" name="major" id="major" value="">
+			  <input type="text" name="major" id="major" value="" required>
 			  <br>
 			  School:<br>
-			  <input type="text" name="school" id="school" value="">
+			  <input type="text" name="school" id="school" value="" required>
 			  <br>
 			  Year:<br>
 			  <select name="year" id="year">
@@ -54,51 +52,28 @@
 			  Experience#3:<br>
 			  <textarea rows="4" cols="50" name="exp3" id="exp3"></textarea>
 			  <br>
-			  <p><input type="submit" value="Create Resume" onclick="postResume();"></p>
+			  <p><input type="submit" id="createResume" value="Create Resume" onclick="postResume();"></p>
+				<p>*To update, please use ResumeID</p>
+				<p><button id="updateBtn" onclick="updateResume()" disabled>Update Resume</button><br></p>
+				<p><button id="deleteBtn" onclick="deleteResume()" disabled>Delete Resume</button><br></p>
 		</form>
 		<div class="resumeList">
+			<p><button id="btn" onclick="displayAllResume()">Display Resume List</button><br></p>
 			<h2>Resume List</h2>
 			<table>
-				<tr>
-					<th>ResumeID</th>
-					<th>Last Name</th>
-				</tr>
-			</table>
-		</div>
+							<tr>
+								<th>ResumeID</th>
+								<th>Full Name</th>
+							</tr>
+							<tbody id="tbody">
+							</tbody>
+						</table>
+		 </div>
+
 	</div>
 
 
-	<div class="displayArea">
-		<h2>Resume Preview</h2>
-		<table>
-						<tbody id="tbody">
-							<tr>
-									<td>First Name</td>
-								</tr>
-								<tr>
-									<td>Last Name</td>
-								</tr>
-								<tr>
-									<td>Major</td>
-								</tr>
-								<tr>
-									<td>School</td>
-								</tr>
-								<tr>
-									<td>Year</td>
-								</tr>
-								<tr>
-									<td>Experience1</td>
-								</tr>
-								<tr>
-									<td>Experience2</td>
-								</tr>
-								<tr>
-									<td>Experience3</td>
-								</tr>
-						</tbody>
-					</table>
-	 </div>
+
 
 
 </body>

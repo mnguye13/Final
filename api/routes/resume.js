@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Resume = require('../models/resume_model');
-const Ctrl = require('../controllers/controller');
-const controller = new Ctrl(Resume);
+const ResumeController = require('../controllers/resumeController');
+const controller = new ResumeController(Resume);
 router.get('/', (req, res, next) => {
     controller.getAll((error, result)=>{
         handleCallback(error, result, res);
@@ -35,6 +35,9 @@ router.delete('/:id', (req, res, next) => {
 });
 
 let handleCallback = (error, result, response)=>{
+    console.log("error: " + JSON.stringify(error));
+    console.log("result: " + JSON.stringify(result));
+
     if(error) return response.status(500).json({error: error});
     return response.status(200).json(result);
 }
