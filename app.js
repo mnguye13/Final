@@ -3,9 +3,10 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const { config } = require('./api/env');
 const resumeRoutes = require('./api/routes/resume');
-mongoose.connect('mongodb+srv://kevin:26nhan03@cluster0-hfcgn.mongodb.net/test?retryWrites=true&w=majority',
+
+mongoose.connect(config.DB,
     {
         useUnifiedTopology: true,
         useNewUrlParser: true
@@ -36,14 +37,19 @@ app.use('/styles', express.static(__dirname));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/scripts', express.static(__dirname + '/scripts'));
 
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+//app.get('/resume', (req, res) => {
+    //res.sendFile(__dirname + '/resume.html');
+//});
+// Routes which should handle requests
+
 app.get('/resumeInfo', (req, res) => {
     res.sendFile(__dirname + '/resumeInfo.html');
 });
-// Routes which should handle requests
 
 app.use('/resume', resumeRoutes);
 //
