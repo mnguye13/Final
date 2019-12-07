@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<head>
+        <title>Resume Generator</title>
+		<h1>Resume Generator</h1>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./styles/styles.css">
+        <script src="./scripts/script.js"></script>
+    </head>
+  <div class = "createArea">
+				<form id="resumeSelect" action=#>
+			  Resume ID/Student ID:<br>
+			  <input type="text" name="resumeID" id="resumeID" value="">
+			  <br>
+				<p><button id="btn" onclick="displayResume()">Display Resume</button><br></p>
+				<p><button id="btn" onclick="updateResume()">Update Resume</button><br></p>
+				<p><button id="btn" onclick="deleteResume()">Delete Resume</button><br></p>
+				</form>
+				<form id="resumeCreate" action=#>
+				School ID:<br>
+			  <input type="text" name="studentID" id="studentID" value="">
+			  <br>
+			  First name:<br>
+			  <input type="text" name="firstname" id="firstname" value="">
+			  <br>
+			  Last name:<br>
+			  <input type="text" name="lastname" id="lastname" value="">
+			  <br>
+			  Major:<br>
+			  <input type="text" name="major" id="major" value="">
+			  <br>
+			  School:<br>
+			  <input type="text" name="school" id="school" value="">
+			  <br>
+			  Year:<br>
+			  <select name="year" id="year">
+					<option value="freshman">Freshman</option>
+	    		<option value="sophomore">Sophomore</option>
+	    		<option value="junior">Junior</option>
+	    		<option value="senior">Senior</option>
+					<option value="senior">Masters</option>
+					<option value="senior">PHD</option>
+
+				</select>
+			  <br>
+			  Experience#1:<br>
+			  <textarea rows="4" cols="50" name="exp1" id="exp1"></textarea>
+			  <br>
+			  Experience#2:<br>
+			  <textarea rows="4" cols="50" name="exp2" id="exp2" ></textarea>
+			  <br>
+			  Experience#3:<br>
+			  <textarea rows="4" cols="50" name="exp3" id="exp3"></textarea>
+			  <br>
+			  <p><input type="submit" value="Create Resume" onclick="postResume();"></p>
+		</form>
+		<div class="resumeList">
+			<h2>Resume List</h2>
+			<table>
+				<tr>
+					<th>ResumeID</th>
+					<th>Last Name</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<div class="displayArea">
+		<h2>Resume Preview</h2>
+		<table>
+						<tbody id="tbody">
+							<tr>
+									<td>First Name</td>
+								</tr>
+								<tr>
+									<td>Last Name</td>
+								</tr>
+								<tr>
+									<td>Major</td>
+								</tr>
+								<tr>
+									<td>School</td>
+								</tr>
+								<tr>
+									<td>Year</td>
+								</tr>
+								<tr>
+									<td>Experience1</td>
+								</tr>
+								<tr>
+									<td>Experience2</td>
+								</tr>
+								<tr>
+									<td>Experience3</td>
+								</tr>
+						</tbody>
+					</table>
+	 </div>
+
+
+</body>
+</html>

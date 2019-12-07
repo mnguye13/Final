@@ -1,0 +1,22 @@
+h1{
+	text-align: center;
+}
+table{
+	border-collapse: collapse;
+	border: 1px solid black;;
+	width: 90%;
+}
+td {
+  height: 50px;
+}
+body{
+	background-color: #E8DAEF;
+}
+.createArea{
+	padding-left: 10%;
+}
+.displayArea{
+	margin-top: 10%;
+	margin-left: 10%;
+	margin-right: :10%;
+}
