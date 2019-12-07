@@ -78,8 +78,43 @@ function postResume() {
             console.log(`Error ${error}`)
         }
     });
-}
+};
 
+function updateResume(){
+
+
+  var id = document.getElementById('resumeID').value
+  const Url4='http://localhost:5555/resume/' + id;
+  $.ajax({
+      url: Url4,
+      method:"PATCH",
+      success: result => {
+          //console.log(result);
+          console.log(result)
+          document.getElementById("resumeSelect").reset();
+      },
+      error: error =>{
+          console.log(`Error ${error}`)
+      }
+  });
+
+};
+function deleteResume(){
+
+  var id = document.getElementById('resumeID').value
+  const Url5='http://localhost:5555/resume/' + id;
+  $.ajax({
+      url: Url5,
+      method:"DELETE",
+      success: result => {
+          console.log(result);
+          document.getElementById("resumeSelect").reset();
+      },
+      error: error =>{
+          console.log(`Error ${error}`)
+      }
+  });
+};
 function Resume(rResumeID,rStudentID,rFirstName,rLastName, rMajor, rSchool, rYear, rExperience1, rExperience2, rExperience3){
 	this.resumeID = rResumeID;
   this.studentID = rStudentID;
@@ -93,4 +128,4 @@ function Resume(rResumeID,rStudentID,rFirstName,rLastName, rMajor, rSchool, rYea
 	this.exp3 = rExperience3;
 
 
-}
+};
