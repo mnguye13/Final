@@ -32,6 +32,7 @@ function displayResume() {
         event.preventDefault()
     });
     var id = document.getElementById('resumeID').value
+
     const Url2='http://localhost:5555/resume/' + id;
     $.ajax({
         url: Url2,

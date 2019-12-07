@@ -13,4 +13,4 @@ const resumeSchema = mongoose.Schema({
     exp3: { type: String, required: false}
 });
 
-module.exports = mongoose.model('Resume', resumeSchema);
+module.exports = mongoose.model('ResumeTable', resumeSchema);
